@@ -1,0 +1,21 @@
+{
+  "name": "CNHS File Depot",
+  "short_name": "File Depot",
+  "description": "The official, secure, and centralized file repository for Cogon National High School.",
+  "start_url": ".",
+  "display": "standalone",
+  "background_color": "#111827",
+  "theme_color": "#0052D4",
+  "icons": [
+    {
+      "src": "icons/cogon192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "icons/cogon512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}

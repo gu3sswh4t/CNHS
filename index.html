@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Cogon National High School</title>
+    <link rel="manifest" href="manifest.json">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="tsparticles"></div>
+    <div id="loader"><div class="spinner"></div></div>
+    <div id="toastContainer"></div>
+    <div id="mobileNavOverlay">
+        <button class="modal-close-btn" id="mobileNavCloseBtn">&times;</button>
+        <nav class="header-nav" id="mobileNavLinks"></nav>
+    </div>
+    <div id="achievementBanner">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.35 7.18h7.55l-6.1 4.44 2.35 7.18-6.1-4.44-6.1 4.44 2.35-7.18-6.1-4.44h7.55l2.35-7.18z"/></svg>
+        <span id="achievementText"></span>
+    </div>
+    <header class="header">
+        <div class="header-left">
+            <div class="logo" id="mainLogo">
+                <img src="icons/cogon.png" alt="CNHS Logo" class="header-logo-img">
+                CNHS <span>OFFICIAL</span>
+            </div>
+            <nav class="header-nav" id="headerNav">
+                <ul>
+                    <li>
+                        <a href="#">Resources</a>
+                        <ul>
+                            <li><a href="#" data-page-id="learning_links">Learning Links</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#">Announcement</a>
+                        <ul>
+                            <li><a href="#" data-page-id="calendar_of_activities">Calendar of activities</a></li>
+                            <li><a href="#" data-page-id="exam_schedules">Exam Schedules</a></li>
+                            <li><a href="#" data-page-id="enrollment_requirements">Enrollment Requirements</a></li>
+                            <li><a href="#" data-page-id="upcoming_events">Upcoming events</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#">About</a>
+                        <ul>
+                            <li><a href="#" data-page-id="faculty_and_staff">Faculty and Staff</a></li>
+                            <li><a href="#" data-page-id="history">History</a></li>
+                            <li><a href="#" data-page-id="facebook_page">Facebook Page</a></li>
+                            <li><a href="#" data-page-id="leadership">Leadership</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </nav>
+            <label class="theme-switch" for="theme-toggle" title="Toggle theme">
+                <input type="checkbox" id="theme-toggle" />
+                <span class="slider"></span>
+            </label>
+        </div>
+        <div class="header-controls">
+            <div class="user-id-display" id="currentUserIdContainer" style="display: none;">
+                Hello,&nbsp;<span id="currentUserId"></span>!
+            </div>
+            <button id="myClassesBtn" class="header-btn" style="display: none;">My Classes</button>
+            <button id="adminMyPrivateFilesBtn" class="header-btn" style="display: none;">My Private Files</button>
+            <button id="systemOverviewBtn" class="header-btn" style="display: none;">System Overview</button>
+            <button id="changePasswordBtn" class="header-btn" style="display: none;">Account</button>
+            <button id="logoutBtn" class="header-btn" style="display: none;">Logout</button>
+            <button id="mobileMenuBtn">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+                </svg>
+            </button>
+        </div>
+    </header>
+    <main>
+        <section id="landingPage" class="content-section landing-page">
+            <div class="landing-content">
+                <h1>FILE DEPOT</h1>
+                <p>One Portal. Every File. Fully Official.</p>
+                <div class="landing-actions">
+                    <button id="loginBtn" class="landing-btn">Teacher Login</button>
+                    <button id="studentAccessBtn" class="landing-btn secondary">Student Access</button>
+                </div>
+                <div id="landingGallery">
+                    <div class="gallery-track"></div>
+                </div>
+            </div>
+        </section>
+
+        </main>
+    <footer class="footer">
+        <p>©2024-<span id="currentYear"></span> Cogon National High School ID:304223</p>
+    </footer>
+
+    <div id="confirmationModal" class="confirmation-modal">
+        </div>
+    <script src="https://cdn.jsdelivr.net/npm/tsparticles@3.4.0/tsparticles.bundle.min.js"></script>
+    <script>
+        tsParticles.load({
+            id: "tsparticles",
+            options: { /* ... tsparticles config ... */ }
+        });
+    </script>
+    
+    <script type="module" src="app.js"></script>
+
+    <script>
+        if ('serviceWorker' in navigator) {
+          window.addEventListener('load', () => {
+            navigator.serviceWorker.register('sw.js').then(registration => {
+              console.log('ServiceWorker registration successful with scope: ', registration.scope);
+            }, err => {
+              console.log('ServiceWorker registration failed: ', err);
+            });
+          });
+        }
+    </script>
+</body>
+</html>
