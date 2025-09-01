@@ -5,8 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Cogon National High School</title>
+    
     <link rel="manifest" href="manifest.json">
+    <link rel="icon" href="icons/cogon.png" type="image/png">
+
     <link rel="stylesheet" href="style.css">
+
+    <script type="module" src="app.js" defer></script>
 </head>
 <body>
     <div id="tsparticles"></div>
@@ -90,23 +95,52 @@
             </div>
         </section>
 
-        </main>
+        <section id="studentAccessSection" class="content-section" style="display: none;"></section>
+        <section id="authSection" class="content-section auth-section" style="display: none;"></section>
+        <section id="classManagementSection" class="content-section" style="display: none;"></section>
+        <section id="systemAdminPanel" class="content-section" style="display: none;"></section>
+        <section id="adminPanel" class="content-section" style="display: none;"></section>
+        <section id="privateLinksSection" class="content-section" style="display: none;"></section>
+        <section id="updatePasswordSection" class="content-section" style="display: none;"></section>
+        <section id="systemOverviewSection" class="content-section" style="display: none;"></section>
+        <section id="learningResourcesSection" class="content-section" style="display: none;"></section>
+    </main>
     <footer class="footer">
         <p>©2024-<span id="currentYear"></span> Cogon National High School ID:304223</p>
     </footer>
 
-    <div id="confirmationModal" class="confirmation-modal">
-        </div>
+    <div id="confirmationModal" class="confirmation-modal"></div>
+    <div id="contentModal" class="modal"></div>
+    <div id="classFilesModal" class="modal"></div>
+    <div id="galleryModal" class="modal"></div>
+    <div id="editModal" class="modal"></div>
+    <div id="forgotPasswordModal" class="modal"></div>
+
     <script src="https://cdn.jsdelivr.net/npm/tsparticles@3.4.0/tsparticles.bundle.min.js"></script>
     <script>
         tsParticles.load({
             id: "tsparticles",
-            options: { /* ... tsparticles config ... */ }
+            options: {
+                fpsLimit: 60,
+                particles: {
+                    number: { value: 60, density: { enable: true, value_area: 800 } },
+                    color: { value: "#ffffff" },
+                    shape: { type: "circle" },
+                    opacity: { value: 0.3, random: true, anim: { enable: true, speed: 1, opacity_min: 0.05, sync: false } },
+                    size: { value: 2, random: true },
+                    line_linked: { enable: true, distance: 150, color: "#ffffff", opacity: 0.1, width: 1 },
+                    move: { enable: true, speed: 1, direction: "none", random: true, straight: false, out_mode: "out" }
+                },
+                interactivity: {
+                    detect_on: "canvas",
+                    events: { onhover: { enable: true, mode: "grab" }, onclick: { enable: false }, resize: true },
+                    modes: { grab: { distance: 140, line_opacity: 0.3 } }
+                },
+                retina_detect: true
+            }
         });
     </script>
     
-    <script type="module" src="app.js" defer></script>
-
     <script>
         if ('serviceWorker' in navigator) {
           window.addEventListener('load', () => {
@@ -119,5 +153,4 @@
         }
     </script>
 </body>
-
 </html>
